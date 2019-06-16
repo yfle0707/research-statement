@@ -1,0 +1,866 @@
+@inproceedings{acdc,
+ author = {Keqiang He and Eric Rozner and Kanak Agarwal and Yu (Jason) Gu and Wes Felter and John Carter and Aditya Akella},
+ title = {{AC/DC TCP}: Virtual Congestion Control Enforcement for Datacenter Networks},
+ booktitle = {SIGCOMM},
+ year = {2016},
+} 
+
+@inproceedings{virt_cong,
+ author = {Cronkite-Ratcliff, Bryce and Bergman, Aran and Vargaftik, Shay and Ravi, Madhusudhan and McKeown, Nick and Abraham, Ittai and Keslassy, Isaac},
+ title = {Virtualized Congestion Control},
+ booktitle = {SIGCOMM},
+ year = {2016},
+ publisher = {ACM},
+} 
+
+// Discusses two optimizations: TCP ACK offloading and what seems like LRO
+@inproceedings{ack-offload,
+ author = {Aravind Menon and Willy Zwaenepoel},
+ title = {Optimizing {TCP} Receive Performance},
+ booktitle = {USENIX ATC},
+ year = {2008},
+} 
+
+@inproceedings {arrakis,
+ author = {Simon Peter and Jialin Li and Irene Zhang and Dan R. K. Ports and Doug Woos and Arvind Krishnamurthy and Thomas Anderson and Timothy Roscoe},
+ title = {Arrakis: The Operating System is the Control Plane},
+ booktitle = {OSDI},
+ year = {2014},
+ month = Oct,
+ url = {https://www.usenix.org/conference/osdi14/technical-sessions/presentation/peter},
+ publisher = {USENIX Association},
+}
+
+@misc{broadcom_deadlock,
+ author = {Sven Ulland},
+ title = {Kernel panic/crash, bnx2 flow control flooding and network outages},
+ howpublished="Linux-PowerEdge -- Linux on Dell PowerEdge Servers discussion \url{http://lists.us.dell.com/pipermail/linux-poweredge/2011-October/045485.html}",
+ year = {2011},
+}
+
+@misc{Gazelle,
+ title = {Gazelle: Towards Predictable Low Latency Networks},
+ howpublished="url{https://research.vmware.com/projects/gazelle-towards-predictable-low-latency-networks}",
+ year = {2019},
+}
+
+@misc{catapult,
+ title = {Project Catapult},
+ howpublished="url{https://www.microsoft.com/en-us/research/project/project-catapult/}",
+ year = {2019},
+}
+
+@misc{brainwave,
+ title = {Project Brainwave},
+ howpublished="url{https://www.microsoft.com/en-us/research/project/project-brainwave/}",
+ year = {2019},
+}
+
+
+@misc{cloudlab,
+  key={CloudLab},
+  title={CloudLab},
+  howpublished =  "\url{http://cloudlab.us/}"
+}
+
+@inproceedings{detail,
+ author = {Zats, David and Das, Tathagata and Mohan, Prashanth and Borthakur, Dhruba and Katz, Randy},
+ title = {DeTail: Reducing the Flow Completion Time Tail in Datacenter Networks},
+ booktitle = {SIGCOMM},
+ series = {SIGCOMM '12},
+ year = {2012},
+ isbn = {978-1-4503-1419-0},
+ location = {Helsinki, Finland},
+ pages = {139--150},
+ numpages = {12},
+} 
+
+// In general, Jeff Mogul doesn't like TOE. However, he thinks it is reasonable for RDMA
+@inproceedings{dumb,
+ author = {Jeffrey C. Mogul},
+ title = {{TCP} Offload is a Dumb Idea Whose Time Has Come},
+ booktitle = {HotOS},
+ year = {2003},
+ location = {Lihue, Hawaii},
+ pages = {5--5},
+ numpages = {1},
+ acmid = {1251059},
+ publisher = {USENIX Association},
+} 
+
+@conference{ecn_or_delay,
+ author = {Yibo Zhu and Monia Ghobadi and Vishal Misra and Jitendra Padhye},
+ title = {{ECN} or Delay: Lessons Learnt from Analysis of {DCQCN} and {TIMELY}},
+ booktitle = {Proceedings of 2016 ACM Conference on Emerging network experiment and technology (CoNEXT 2016)},
+ month = {December},
+ year = {2016},
+} 
+
+@inproceedings{tcp-bolt,
+  author    = {Brent Stephens and Alan L. Cox and Ankit Singla and John
+    Carter and Colin Dixon and Wesley Felter},
+  title     = {Practical {DCB} for Improved Data Center Networks},
+  booktitle = {INFOCOM},
+  year      = {2014},
+}
+
+@article{fast-tcp,
+ author = {Wei, David X. and Jin, Cheng and Low, Steven H. and Hegde, Sanjay},
+ title = {{FAST TCP}: Motivation, Architecture, Algorithms, Performance},
+ journal = {IEEE/ACM Trans. Netw.},
+ issue_date = {December 2006},
+ volume = {14},
+ number = {6},
+ month = dec,
+ year = {2006},
+ publisher = {IEEE Press},
+} 
+
+@INPROCEEDINGS{compound-tcp,
+    author = {Kun Tan and Jingmin Song},
+    title = {A compound {TCP} approach for high-speed and long distance networks},
+    booktitle = {In Proc. IEEE INFOCOM},
+    year = {2006}
+}
+
+@Inproceedings {farm,
+   author       = {Aleksandar Dragojevi{\'c} and Dushyanth Narayanan and Orion Hodson and Miguel Castro},
+   booktitle    = {NSDI},
+   month        = {April},
+   publisher    = {USENIX},
+   title        = {{FaRM}: Fast Remote Memory},
+   year         = {2014},
+}
+
+@inproceedings {farm2,
+   author       = {Aleksandar Dragojevi{\'c} and Dushyanth Narayanan and Edmund B Nightingale and
+                   Matthew Renzelmann and Alex Shamis and Anirudh Badam and Miguel Castro},
+   booktitle    = {SOSP},
+   month        = {October},
+   publisher    = {ACM},
+   title        = {No compromises: distributed transactions with consistency, availability, and
+                   performance},
+   year         = {2015},
+}
+
+@inproceedings{fastpass,
+ author =       "Jonathan Perry and Amy Ousterhout and Hari Balakrishnan and Devavrat Shah and Hans Fugal",
+ title =        "{Fastpass: A Centralized ``Zero-Queue'' Datacenter Network}",
+ booktitle =    {SIGCOMM},
+ year =         {2014},
+}
+
+
+@inproceedings {flexnic,
+ author = {Antoine Kaufmann and Simon Peter and Naveen Kr. Sharma and Thomas
+   Anderson and Arvind Krishnamurthy},
+ title = {High Performance Packet Processing with {FlexNIC}},
+ booktitle = {ASPLOS},
+ year = {2016},
+}
+
+@inproceedings{herd,
+   author = {Anuj Kalia and Michael Kaminsky and David G. Andersen},
+   title = {Using {RDMA} Efficiently for Key-Value Services},
+   booktitle = {{SIGCOMM}},
+   address = {Chicago, {IL}},
+   year = {2014}
+}
+
+@inproceedings {herd2,
+ author = {Anuj Kalia and Michael Kaminsky and David G. Andersen},
+ title = {Design Guidelines for High Performance RDMA Systems},
+ booktitle = {2016 USENIX Annual Technical Conference (USENIX ATC 16)},
+ year = {2016},
+ publisher = {USENIX Association},
+}
+
+@misc{infiniband,
+    author = {Infiniband Trade Association},
+    title = {{InfiniBand Architecture Specification, Release 1.0}},
+    url = {http://www.infinibandta.org/specs},
+    year = {2000}
+}
+
+@inproceedings{judd15,
+ author = {Judd, Glenn},
+ title = {Attaining the Promise and Avoiding the Pitfalls of TCP in the Datacenter},
+ booktitle = {Proceedings of the 12th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'15},
+ year = {2015},
+ isbn = {978-1-931971-218},
+ location = {Oakland, CA},
+ pages = {145--157},
+ numpages = {13},
+ url = {http://dl.acm.org/citation.cfm?id=2789770.2789781},
+ acmid = {2789781},
+ publisher = {USENIX Association},
+ address = {Berkeley, CA, USA},
+} 
+
+@misc{rdma:vmware,
+    author = {{Josh Simmons}},
+    title = {{RDMA in the Cloud:
+Enabling high-bandwidth, low-latency
+communication in virtual environments
+for HPC}},
+    url = {https://octo.vmware.com/wp-content/uploads/2014/11/ndm2014-sc14-simons3.pdf},
+    year = {2000}
+}
+
+@inproceedings{jacobson_cong,
+ author = {Van Jacobson},
+ title = {Congestion Avoidance and Control},
+ booktitle = {Symposium Proceedings on Communications Architectures and Protocols},
+ series = {SIGCOMM '88},
+ year = {1988},
+ publisher = {ACM},
+} 
+
+@inproceedings {mtcp,
+ author = {EunYoung Jeong and Shinae Wood and Muhammad Jamshed and Haewon
+ Jeong and Sunghwan Ihm and Dongsu Han and KyoungSoo Park},
+ title = {{mTCP}: a Highly Scalable User-level TCP Stack for Multicore
+ Systems},
+ booktitle = {11th USENIX Symposium on Networked Systems Design and
+ Implementation (NSDI 14)},
+ year = {2014},
+ isbn = {978-1-931971-09-6},
+ publisher = {USENIX Association},
+}
+
+@misc{ofed,
+    author = {{OpenFabrics Alliance}},
+    title = {{OFED Overview}},
+    howpublished = "\url{https://www.openfabrics.org/index.php/openfabrics-software.html}"
+}
+
+@inproceedings{rdma_scale,
+ author = {Chuanxiong Guo and Haitao Wu and Zhong Deng and Gaurav Soni and Jianxi Ye and Jitu Padhye and Marina Lipshteyn},
+ title = {{RDMA} over Commodity Ethernet at Scale},
+ booktitle = {SIGCOMM},
+ year = {2016},
+ isbn = {978-1-4503-4193-6},
+ url = {http://doi.acm.org/10.1145/2934872.2934908},
+ doi = {10.1145/2934872.2934908},
+ acmid = {2934908},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+} 
+
+@inproceedings{rdma_anomalies,
+ author = {Yiwen Zhang and Juncheng Gu and Youngmoon Lee and Mosharaf Chowdhury and Kang G. Shin},
+ title = {Performance Isolation Anomalies in {RDMA}},
+ booktitle = {Proceedings of the Workshop on Kernel-Bypass Networks},
+ series = {KBNets '17},
+ year = {2017},
+ publisher = {ACM},
+} 
+
+@article{red,
+ author = {Sally Floyd and Van Jacobson},
+ title = {Random Early Detection Gateways for Congestion Avoidance},
+ journal = {IEEE/ACM Trans. Netw.},
+ issue_date = {Aug. 1993},
+ year = {1993},
+ publisher = {IEEE Press},
+} 
+
+
+@techreport{softnic,
+    Author = {Han, Sangjin and Jang, Keon and Panda, Aurojit and Palkar, Shoumik and Han, Dongsu and Ratnasamy, Sylvia},
+    Title = {SoftNIC: A Software NIC to Augment Hardware},
+    Institution = {EECS Department, University of California, Berkeley},
+    Year = {2015},
+    Month = {May},
+    URL = {http://www2.eecs.berkeley.edu/Pubs/TechRpts/2015/EECS-2015-155.html},
+    Number = {UCB/EECS-2015-155},
+}
+
+@article{cubic,
+ author = {Ha, Sangtae and Rhee, Injong and Xu, Lisong},
+ title = {CUBIC: A New TCP-friendly High-speed TCP Variant},
+ journal = {SIGOPS Oper. Syst. Rev.},
+ issue_date = {July 2008},
+ volume = {42},
+ number = {5},
+ month = jul,
+ year = {2008},
+}
+
+@inproceedings{dctcp,
+ author = {Alizadeh, Mohammad and Greenberg, Albert and Maltz, David A. and Padhye, Jitendra and Patel, Parveen and Prabhakar, Balaji and Sengupta, Sudipta and Sridharan, Murari},
+ title = {Data Center TCP {(DCTCP)}},
+ booktitle = {SIGCOMM},
+ year = {2010},
+ isbn = {978-1-4503-0201-2},
+ location = {New Delhi, India},
+} 
+
+
+@inproceedings{specialization,
+ author = {Ilias Marinos and Robert N.M. Watson and Mark Handley},
+ title = {Network Stack Specialization for Performance},
+ booktitle = {SIGCOMM},
+ year = {2014},
+ publisher = {ACM},
+}
+
+//TCP ACKs can be processed faster if metadata is extracted and passed through
+//a "network fastpath" instead of encapsulating ACKs in a packet buffer, which
+//is unnecessary because ACKs aren't used as packets
+@inproceedings {tcp-paro,
+ author = {Michael Chan and David R. Cheriton},
+ title = {Improving Server Application Performance via Pure TCP ACK Receive Optimization},
+ booktitle = {Presented as part of the 2013 USENIX Annual Technical Conference (USENIX ATC 13)},
+ year = {2013},
+ isbn = {978-1-931971-01-0},
+ address = {San Jose, CA},
+ pages = {359--364},
+ url = {https://www.usenix.org/conference/atc13/technical-sessions/presentation/chan},
+ publisher = {USENIX},
+}
+
+@inproceedings{tcp-receive,
+ author = {Aravind Menon and Willy Zwaenepoel},
+ title = {Optimizing {TCP} Receive Performance},
+ booktitle = {ATC},
+ year = {2008},
+ publisher = {USENIX Association},
+} 
+
+@inproceedings{tcp_ex_machina,
+   author =       "Keith Winstein and Hari Balakrishnan",
+   title =        "{{TCP} ex {Machina}: Computer-Generated Congestion Control}",
+   booktitle =    {SIGCOMM},
+   year =         {2013},
+   month =        {August},
+   address =      {Hong Kong, }
+}
+
+// Linux refuses to accept any patches for TOE
+@misc{toe,
+    key = {{toe}},
+    title = {{toe}},
+    author = {{The Linux Foundation}},
+    howpublished = "\url{http://www.linuxfoundation.org/collaborate/workgroups/networking/toe}",
+}
+
+%
+% Papers about different production data center networks
+%
+
+@inproceedings{jupiter,
+ author = {Singh, Arjun and Ong, Joon and Agarwal, Amit and Anderson, Glen and Armistead, Ashby and Bannon, Roy and Boving, Seb and Desai, Gaurav and Felderman, Bob and Germano, Paulie and Kanagala, Anand and Provost, Jeff and Simmons, Jason and Tanda, Eiichi and Wanderer, Jim and H\"{o}lzle, Urs and Stuart, Stephen and Vahdat, Amin},
+ title = {Jupiter Rising: A Decade of Clos Topologies and Centralized Control in Google's Datacenter Network},
+ booktitle = {SIGCOMM},
+ year = {2015},
+ location = {London, United Kingdom},
+ pages = {183--197},
+} 
+
+
+@inproceedings{pingmesh,
+ author = {Guo, Chuanxiong and Yuan, Lihua and Xiang, Dong and Dang, Yingnong and Huang, Ray and Maltz, Dave and Liu, Zhaoyi and Wang, Vin and Pang, Bin and Chen, Hua and Lin, Zhi-Wei and Kurien, Varugis},
+ title = {Pingmesh: A Large-Scale System for Data Center Network Latency Measurement and Analysis},
+ booktitle = {SIGCOMM},
+ year = {2015},
+ pages = {139--152},
+} 
+
+@inproceedings{facebook_network,
+ author = {Roy, Arjun and Zeng, Hongyi and Bagga, Jasmeet and Porter, George and Snoeren, Alex C.},
+ title = {Inside the Social Network's (Datacenter) Network},
+ booktitle = {SIGCOMM},
+ year = {2015},
+ pages = {123--137},
+} 
+
+@inproceedings{lu2014accelerating,
+  title={Accelerating spark with {RDMA} for big data processing: Early experiences},
+  author={Lu, Xiaoyi and Rahman, Md Wasi Ur and Islam, Nahina and Shankar, Dipti and Panda, Dhabaleswar K},
+  booktitle={High-Performance Interconnects (HOTI)},
+  year={2014},
+  organization={IEEE}
+}
+
+@inproceedings{mitchell2013using,
+  title={Using One-Sided {RDMA} Reads to Build a Fast, CPU-Efficient Key-Value Store.},
+  author={Mitchell, Christopher and Geng, Yifeng and Li, Jinyang},
+  booktitle={USENIX Annual Technical Conference},
+  address={San Jose, {CA}},
+  month={June},
+  year={2013}
+}
+
+@inproceedings{Poke2015DARE,
+ author = {Poke, Marius and Hoefler, Torsten},
+ title = {{DARE}: High-Performance State Machine Replication on {RDMA} Networks},
+ booktitle = {HPDC},
+ year = {2015},
+} 
+
+@article{ramcloud,
+  author = {Ousterhout, John and Agrawal, Parag and Erickson, David and Kozyrakis, Christos and Leverich, Jacob and Mazi\`{e}res, David and Mitra, Subhasish and Narayanan, Aravind and Parulkar, Guru and Rosenblum, Mendel and Rumble, Stephen M. and Stratmann, Eric and Stutsman, Ryan},
+  title = {The Case for {RAMClouds}: Scalable High Performance Storage Entirely in {DRAM}},
+  journal = {SIGOPS OSR},
+  volume = {43},
+  number = {4},
+  year = {2010},
+}
+
+@techreport{rdma,
+    number=     {draft-hilland-rddp-verbs-00},
+    type =      {Internet-Draft},
+    institution =   {Internet Engineering Task Force},
+    publisher = {Internet Engineering Task Force},
+    note =      {Work in Progress},
+    url =       {https://tools.ietf.org/html/draft-hilland-rddp-verbs-00},
+    author=     {Jeff Hilland},
+    title=      {{RDMA Protocol Verbs Specification}},
+    year =      2003,
+    month =     apr,
+}
+
+%Aaron Blasius and Bhavesh Davda
+@misc{rdma_virt,
+ author = {Aaron Blasius and {B. Davda, VMware}},
+ title = {{RDMA} in Virtualized and Cloud Environments},
+ note = {Open Fabrics Alliance International Developers Workshop},
+ month = {March},
+ year = {2014},
+ location = {Monterey, CA}
+}
+
+@misc{iwarp,
+ author = {{RDMA Consortium}},
+ title = {Architectural Specifications for {RDMA} over {TCP/IP}},
+ howpublished="\url{http://rdmaconsortium.org/}",
+}
+
+@misc{roce_azure,
+ author = {Albert Greenberg{, Microsoft Azure}},
+ title = {{ONS 2014 Keynote}},
+ year = {2014},
+}
+
+@misc{rocev1,
+ author = {{InfiniBand Trade Association}},
+ title = {{Supplement to InfiniBand Architecture Specification
+     Volume 1 Release 1.2.1 Annex A16: RDMA over Converged
+     Ethernet (RoCE)}},
+ howpublished="\url{https://cw.infinibandta.org/document/dl/7148}",
+ year={2010}
+}
+
+@misc{rocev2,
+ author = {{InfiniBand Trade Association}},
+ title = {{Supplement to InfiniBand Architecture Specification
+     Volume 1 Release 1.2.1 Annex A17: RoCEv2}},
+ howpublished="\url{https://cw.infinibandta.org/document/dl/7781}",
+ year={2014}
+}
+
+@misc{roce_v_iwarp,
+ author = {{Mellanox Technologies}},
+ title = {{RoCE vs. iWARP Competitive Analysis}},
+ howpublished="\url{http://www.mellanox.com/related-docs/whitepapers/WP_RoCE_vs_iWARP.pdf}",
+ year = 2015,
+}
+
+% RDMA CONGESTION CONTROL
+@inproceedings{timely,
+ title = {{TIMELY}: {RTT}-based Congestion Control for the Datacenter},
+ author  = {Radhika Mittal and Terry Lam and Nandita Dukkipati and Emily Blem and Hassan Wassel and Monia Ghobadi and Amin Vahdat and Yaogong Wang and David Wetherall and David Zats},
+ year  = 2015,
+ booktitle = {SIGCOMM}
+}
+
+@Inproceedings {dcqcn,
+author       = {Yibo Zhu and Haggai Eran and Daniel Firestone and Chuanxiong
+                Guo and Marina Lipshteyn and Yehonatan Liron and Jitendra
+                Padhye and Shachar Raindel and Mohamad Haj Yahia and Ming
+                Zhang},
+booktitle    = {SIGCOMM},
+month        = {August},
+publisher    = {ACM},
+title        = {Congestion Control for Large-Scale {RDMA} Deployments},
+url          = {http://research.microsoft.com/apps/pubs/default.aspx?id=252307},
+year         = {2015},
+}
+
+% Other uses for DCB Priorities
+@inproceedings {rc3,
+ author = {Radhika Mittal and Justine Sherry and Sylvia Ratnasamy and Scott Shenker},
+ title = {Recursively Cautious Congestion Control},
+ booktitle = {NSDI},
+ year = {2014},
+ publisher = {USENIX Association},
+}
+
+@inproceedings {qjump,
+ author = {Matthew P. Grosvenor and Malte Schwarzkopf and Ionel Gog and Robert N. M. Watson and Andrew W. Moore and Steven Hand and Jon Crowcroft},
+ title = {Queues Don{\textquoteright}t Matter When You Can {JUMP} Them!},
+ booktitle = {NSDI},
+ year = {2015},
+ publisher = {USENIX Association},
+}
+
+% Incast
+@inproceedings{incast-ucb,
+	author = {Chen, Yanpei and Griffith, Rean and Liu, Junda and Katz, Randy H. and Joseph, Anthony D.},
+	title = {Understanding {TCP} Incast Throughput Collapse in Datacenter Networks},
+	booktitle = {WREN},
+	year = {2009},
+	pages = {73--82},
+} 
+
+@inproceedings{incast-cmu,
+	author = {Vasudevan, Vijay and Phanishayee, Amar and Shah, Hiral and Krevat, Elie and Andersen, David G. and Ganger, Gregory R. and Gibson, Garth A. and Mueller, Brian},
+	title = {Safe and effective fine-grained {TCP} retransmissions for Datacenter communication},
+	booktitle = {SIGCOMM},
+	year = {2009},
+	pages = {303--314},
+} 
+
+% Deadlock-free
+@article{dally_dfr,
+    author={William J. Dally and Charles L. Seitz},
+    journal={IEEE Transactions on Computers},
+    title={Deadlock-Free Message Routing in Multiprocessor Interconnection Networks},
+    year={1987},
+    month={May},
+    volume={C-36},
+    number={5},
+    pages={547-553},
+}
+
+% Standards
+@misc{Qau,
+ author = {Norm Finn},
+ title = {{IEEE 802.1: 802.1Qau - Congestion Notification}},
+ howpublished="\url{http://www.ieee802.org/1/pages/802.1au.html}",
+ year={2008}
+}
+
+@misc{Qaz,
+ author = {Craig Carlson},
+ title = {{IEEE 802.1: 802.1Qaz - Enhanced Transmission Selection}},
+ howpublished="\url{http://www.ieee802.org/1/pages/802.1az.html}",
+ year={2009}
+}
+
+@misc{Qbb,
+ author = {Claudio DeSanti},
+ title = {{IEEE 802.1: 802.1Qbb - Priority-based Flow Control}},
+ howpublished="\url{http://www.ieee802.org/1/pages/802.1bb.html}",
+ year={2009}
+}
+
+@misc{dcb,
+ author = {{Data Center Bridging Task Group}},
+ howpublished="\url{http://www.ieee802.org/1/pages/dcbridges.html}"
+}
+
+@misc{mptcp,
+        series =        {Request for Comments},
+        number =        6824,
+        howpublished =  {RFC 6824},
+        author =        {Alan Ford and Costin Raiciu and Mark J. Handley and Olivier Bonaventure},
+        title =         {{TCP Extensions for Multipath Operation with Multiple Addresses}},
+        pagetotal =     64,
+        year =          2013,
+        month =         jan,
+}
+
+
+@misc{infiniband,
+    author = {Infiniband Trade Association},
+    title = {{InfiniBand Architecture Specification, Release 1.0}},
+    url = {http://www.infinibandta.org/specs},
+    year = {2000}
+}
+
+@inproceedings{vegas,
+ author = {Brakmo, Lawrence S. and O'Malley, Sean W. and Peterson, Larry L.},
+ title = {TCP Vegas: New Techniques for Congestion Detection and Avoidance},
+ booktitle = {Proceedings of the Conference on Communications Architectures, Protocols and Applications},
+ series = {SIGCOMM '94},
+ year = {1994},
+} 
+
+
+@misc{ofed_linux,
+  author = {{Mellanox Technologies}},
+  title = {{Mellanox OFED for Linux User Manual. Rev 3.40}},
+  howpublished="\url{http://www.mellanox.com/related-docs/prod_software/Mellanox_OFED_Linux_User_Manual_v3.40.pdf}",
+}
+
+% 
+% TCP Vegas papers
+%
+@inproceedings{vegas_revisited, 
+ author={U. Hengartner and J. Bolliger and T. Gross}, 
+ booktitle={INFOCOM}, 
+ title={{TCP} Vegas revisited}, 
+ year={2000}, 
+}
+
+@INPROCEEDINGS{Mo99analysisand,
+    author = {Jeonghoon Mo and Richard J. La and Venkat Anantharam and Jean Walrand},
+    title = {Analysis and Comparison of TCP Reno and Vegas},
+    booktitle = {IN PROCEEDINGS OF IEEE INFOCOM},
+    year = {1999},
+    pages = {1556--1563},
+    publisher = {}
+}
+
+@INPROCEEDINGS{reno_vegas, 
+author={W. Feng and S. Vanichpun}, 
+booktitle={2003 Symposium on Applications and the Internet, 2003. Proceedings.}, 
+title={Enabling compatibility between TCP Reno and TCP Vegas}, 
+year={2003}, 
+}
+
+%
+% RNIC citations
+%
+@misc{connectx-4,
+ author = {{Mellanox Technologies}},
+ title = {{ConnectX-4 VPI}},
+    howpublished = "\url{http://www.mellanox.com/related-docs/prod_adapter_cards/PB_ConnectX-4_VPI_Card.pdf}"
+}
+
+@misc{connectx-3pro,
+ author = {{Mellanox Technologies}},
+ title = {{ConnectX-3 Pro}},
+    howpublished = "\url{http://www.mellanox.com/related-docs/prod_adapter_cards/PB_ConnectX-3_Pro_Card_VPI.pdf}"
+}
+
+@misc{mellanox-personalcomm,
+ author = {{Mellanox Technologies}},
+ title = "Personal communication",
+ year = "2017",
+ mont = sep,
+ }
+@misc{ns3-rdma,
+author = {Zhu, Yibo},
+title ={ns3-rdma},
+howpublished = "\url{https://github.com/bobzhuyb/ns3-rdma/tree/timely}"
+}
+
+@inproceedings{irn,
+ author = {Mittal, Radhika and Shpiner, Alexander and Panda, Aurojit and Zahavi, Eitan and Krishnamurthy, Arvind and Ratnasamy, Sylvia and Shenker, Scott},
+ title = {Revisiting Network Support for RDMA},
+ booktitle = {Proceedings of the 2018 Conference of the ACM Special Interest Group on Data Communication},
+ series = {SIGCOMM '18},
+ year = {2018},
+ location = {Budapest, Hungary},
+ keywords = {PFC, RDMA, RoCE, datacenter transport, iWARP},
+}
+
+@inproceedings{homa,
+ author = {Montazeri, Behnam and Li, Yilong and Alizadeh, Mohammad and Ousterhout, John},
+ title = {Homa: A Receiver-driven Low-latency Transport Protocol Using Network Priorities},
+ booktitle = {Proceedings of the 2018 Conference of the ACM Special Interest Group on Data Communication},
+ series = {SIGCOMM '18},
+ location = {Budapest, Hungary},
+}
+@misc{memcached,
+ title = {{Memcached}},
+    howpublished = "\url{https://memcached.org/}"
+}
+@misc{memaslap,
+ title = {{Memaslap}},
+    howpublished = "\url{https://github.com/pgaref/memcached_bench}"
+}
+
+@misc{tofino,
+ title = {{Barefoot Tofino}},
+    howpublished = "\url{https://www.barefootnetworks.com/technology/#tofino}"
+}
+
+@misc{p4spec,
+ title = {{P4 Language and Related Specifications}},
+    howpublished = "\url{https://p4.org/specs/}"
+}
+@misc{vma,
+ title = {{Mellanox Messaging Accelerator (VMA)}},
+    howpublished = "\url{ http://www.mellanox.com/page/software_vma}"
+}
+@misc{ptp,
+ title = {{ Precision Time Protocol (PTP)}},
+    howpublished = "\url{http://linuxptp.sourceforge.net/ }"
+}
+
+@misc{opennetworklinux,
+ title = {{Open Network Linux}},
+    howpublished = "\url{ https://opennetlinux.org/}"
+}
+@misc{CPU:bandwidth,
+ title = {CPU bandwidth -- the worrisome 2020 trend.},
+    howpublished = "\url{ https://itblog.sandisk.com/cpu-bandwidth-the-worrisome-2020-trend.}"
+}
+
+@misc{DRAM:scaling,
+	title={
+		Challenges and future directions for the scaling of dynamic random-access memory (DRAM).
+	},
+	howpublished="\url{ IBM Journal of Research and
+  Development https://doi.org/10.1147/rd.462.0187.}"
+}
+
+@misc{iWARP:analysis,
+	title={RoCE vs. iWARP Competitive Analysis.},
+   	howpublished="\url{http://www.mellanox.com/related-docs/whitepapers/WP\_RoCE\_vs\_iWARP.pdf.}"
+}
+
+@inproceedings{Infiniswap,
+ author = {Gu, Juncheng and Lee, Youngmoon and Zhang, Yiwen and Chowdhury, Mosharaf and Shin, Kang G.},
+ title = {Efficient Memory Disaggregation with INFINISWAP},
+ booktitle = {Proceedings of the 14th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'17},
+ year = {2017},
+ location = {Boston, MA, USA},
+}
+
+@inproceedings{aggregation:gao,
+ author = {Gao, Peter X. and Narayan, Akshay and Karandikar, Sagar and Carreira, Joao and Han, Sangjin and Agarwal, Rachit and Ratnasamy, Sylvia and Shenker, Scott},
+ title = {Network Requirements for Resource Disaggregation},
+ booktitle = {Proceedings of the 12th USENIX Conference on Operating Systems Design and Implementation},
+ series = {OSDI'16},
+ year = {2016},
+ location = {Savannah, GA, USA},
+}
+
+@inproceedings{uno:le,
+ author = {Le, Yanfang and Chang, Hyunseok and Mukherjee, Sarit and Wang, Limin and Akella, Aditya and Swift, Michael M. and Lakshman, T. V.},
+ title = {UNO: Uniflying Host and Smart NIC Offload for Flexible Packet Processing},
+ booktitle = {Proceedings of the 2017 Symposium on Cloud Computing},
+ series = {SoCC '17},
+ year = {2017},
+ location = {Santa Clara, California},
+}
+
+@inproceedings{farm:aleksandar,
+ author = {Dragojevi\'{c}, Aleksandar and Narayanan, Dushyanth and Hodson, Orion and Castro, Miguel},
+ title = {FaRM: Fast Remote Memory},
+ booktitle = {Proceedings of the 11th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'14},
+ year = {2014},
+ location = {Seattle, WA},
+}
+
+@inproceedings{memory:Marcos,
+ author = {Aguilera, Marcos K. and Amit, Nadav and Calciu, Irina and Deguillard, Xavier and Gandhi, Jayneel and Subrahmanyam, Pratap and Suresh, Lalith and Tati, Kiran and Venkatasubramanian, Rajesh and Wei, Michael},
+ title = {Remote Memory in the Age of Fast Networks},
+ booktitle = {Proceedings of the 2017 Symposium on Cloud Computing},
+ series = {SoCC '17},
+ year = {2017},
+ location = {Santa Clara, California},
+}
+
+@inproceedings{Le:2018:rogue,
+ author = {Le, Yanfang and Stephens, Brent and Singhvi, Arjun and Akella, Aditya and Swift, Michael M.},
+ title = {RoGUE: RDMA over Generic Unconverged Ethernet},
+ booktitle = {Proceedings of the ACM Symposium on Cloud Computing},
+ series = {SoCC '18},
+ year = {2018},
+ location = {Carlsbad, CA, USA},
+} 
+
+
+@article{switchml,
+  author    = {Amedeo Sapio and
+               Marco Canini and
+               Chen{-}Yu Ho and
+               Jacob Nelson and
+               Panos Kalnis and
+               Changhoon Kim and
+               Arvind Krishnamurthy and
+               Masoud Moshref and
+               Dan R. K. Ports and
+               Peter Richt{\'{a}}rik},
+  title     = {Scaling Distributed Machine Learning with In-Network Aggregation},
+  year      = {2019},
+  url       = {http://arxiv.org/abs/1903.06701},
+  archivePrefix = {arXiv},
+}
+
+@inproceedings{Jin:2017:netcache,
+ author = {Jin, Xin and Li, Xiaozhou and Zhang, Haoyu and Soul{\'e}, Robert and Lee, Jeongkeun and Foster, Nate and Kim, Changhoon and Stoica, Ion},
+ title = {NetCache: Balancing Key-Value Stores with Fast In-Network Caching},
+ booktitle = {Proceedings of the 26th Symposium on Operating Systems Principles},
+ series = {SOSP '17},
+ year = {2017},
+ location = {Shanghai, China},
+}
+
+
+@inproceedings{Guo:2016:ROC,
+ author = {Guo, Chuanxiong and Wu, Haitao and Deng, Zhong and Soni, Gaurav and Ye, Jianxi and Padhye, Jitu and Lipshteyn, Marina},
+ title = {RDMA over Commodity Ethernet at Scale},
+ booktitle = {Proceedings of the 2016 ACM SIGCOMM Conference},
+ series = {SIGCOMM '16},
+ location = {Florianopolis, Brazil},
+}
+
+@inproceedings{Zhu:2015:CCL,
+ author = {Zhu, Yibo and Eran, Haggai and Firestone, Daniel and Guo, Chuanxiong and Lipshteyn, Marina and Liron, Yehonatan and Padhye, Jitendra and Raindel, Shachar and Yahia, Mohamad Haj and Zhang, Ming},
+ title = {Congestion Control for Large-Scale RDMA Deployments},
+ booktitle = {Proceedings of the 2015 ACM Conference on Special Interest Group on Data Communication},
+ series = {SIGCOMM '15},
+ location = {London, United Kingdom},
+}
+
+@inproceedings{Mittal:2015:TRC,
+ author = {Mittal, Radhika and Lam, Vinh The and Dukkipati, Nandita and Blem, Emily and Wassel, Hassan and Ghobadi, Monia and Vahdat, Amin and Wang, Yaogong and Wetherall, David and Zats, David},
+ title = {TIMELY: RTT-based Congestion Control for the Datacenter},
+ booktitle = {Proceedings of the 2015 ACM Conference on Special Interest Group on Data Communication},
+ series = {SIGCOMM '15},
+ year = {2015},
+ location = {London, United Kingdom},
+} 
+
+@inproceedings{Firestone:2018:AAN,
+ author = {Firestone, Daniel and Putnam, Andrew and Mundkur, Sambhrama and Chiou, Derek and Dabagh, Alireza and Andrewartha, Mike and Angepat, Hari and Bhanu, Vivek and Caulfield, Adrian and Chung, Eric and Chandrappa, Harish Kumar and Chaturmohta, Somesh and Humphrey, Matt and Lavier, Jack and Lam, Norman and Liu, Fengfen and Ovtcharov, Kalin and Padhye, Jitu and Popuri, Gautham and Raindel, Shachar and Sapre, Tejas and Shaw, Mark and Silva, Gabriel and Sivakumar, Madhan and Srivastava, Nisheeth and Verma, Anshuman and Zuhair, Qasim and Bansal, Deepak and Burger, Doug and Vaid, Kushagra and Maltz, David A. and Greenberg, Albert},
+ title = {Azure Accelerated Networking: SmartNICs in the Public Cloud},
+ booktitle = {Proceedings of the 15th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'18},
+ year = {2018},
+ location = {Renton, WA, USA},
+}
+
+@inproceedings{Abadi:2016:TSL,
+ author = {Abadi, Mart\'{\i}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and Kudlur, Manjunath and Levenberg, Josh and Monga, Rajat and Moore, Sherry and Murray, Derek G. and Steiner, Benoit and Tucker, Paul and Vasudevan, Vijay and Warden, Pete and Wicke, Martin and Yu, Yuan and Zheng, Xiaoqiang},
+ title = {TensorFlow: A System for Large-scale Machine Learning},
+ booktitle = {Proceedings of the 12th USENIX Conference on Operating Systems Design and Implementation},
+ series = {OSDI'16},
+ year = {2016},
+ location = {Savannah, GA, USA},
+}
+
+@inproceedings{pytorch,
+ author = {Adam, Paszke and Sam, Gross and Soumith, Chintala and Gregory, Chanan and Edward, Yang and Zachary, DeVito and Zeming, Lin and Alban, Desmaison and Luca, Antiga and Adam, Lerer},
+ title = {Automatic differentiation in PyTorch},
+ booktitle = {In NIPS 2017 Autodiff Workshop: The Future of Gradient-based Machine Learning Software and Techniques},
+ location = {Long Beach, CA, US},
+}
+
+@inproceedings{Dean:2004:MSD,
+ author = {Dean, Jeffrey and Ghemawat, Sanjay},
+ title = {MapReduce: Simplified Data Processing on Large Clusters},
+ booktitle = {Proceedings of the 6th Conference on Symposium on Operating Systems Design \& Implementation - Volume 6},
+ series = {OSDI'04},
+ year = {2004},
+ location = {San Francisco, CA},
+}
+
+@inproceedings{spark,
+ author = {Zaharia, Matei and Chowdhury, Mosharaf and Das, Tathagata and Dave, Ankur and Ma, Justin and McCauley, Murphy and Franklin, Michael J. and Shenker, Scott and Stoica, Ion},
+ title = {Resilient Distributed Datasets: A Fault-tolerant Abstraction for In-memory Cluster Computing},
+ booktitle = {Proceedings of the 9th USENIX Conference on Networked Systems Design and Implementation},
+ series = {NSDI'12},
+ year = {2012},
+ location = {San Jose, CA},
+}

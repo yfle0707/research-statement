@@ -1,0 +1,136 @@
+\documentclass[10pt]{article}
+\usepackage{fullpage}
+\usepackage{times}
+\usepackage[normalem]{ulem}
+\usepackage{fancyhdr,graphicx,amsmath,amssymb, mathtools, scrextend, titlesec, enumitem}
+\usepackage[ruled,vlined]{algorithm2e} 
+\usepackage{parskip}
+\usepackage{url}
+
+\title{Towards the Age of Fast Programmable Networks}
+\author{Yanfang Le}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-5mm}
+There has been recent emergence of big data systems, e.g. Spark~\cite{spark} and MapReduce~\cite{Dean:2004:MSD}, that are CPU and memory intensive. The GPU intensive distributed systems, e.g., TensorFlow~\cite{Abadi:2016:TSL} and PyTorch~\cite{pytorch}, also require CPU to access memory. 
+These networked systems have high demand on network capacity for data shuffle and communication. 
+However, current trends show that Ethernet network speed outgrows that of CPU processing power and memory bandwidth, 
+i.e., the bottlenecks are CPU and memory~\cite{CPU:bandwidth,DRAM:scaling}. 
+On one hand, it provides opportunities to innovate new applications, e.g., datacenter resource disaggregation~\cite{aggregation:gao}, and poses new challenges for existing applications, i.e., they are required to be re-designed to fully utilize the high-speed network. On the other hand, network offloading through programmable hardware is a 
+promising approach to help release packet processing pressure on CPU, e.g., packetization and de-packetization have been offloaded to the NICs for RDMA~\cite{rocev2} and network functions have been offloaded to the smart NICs (sNICs)~\cite{uno:le}.
+%remote memory access can be offloaded to the programmable switch by NetCache~\cite{Jin:2017:netcache}; and computations get offloaded to the programmable switch by SwitchML~\cite{switchml}. 
+%and provide a faster network by offloading packet processing functions to Network Interface Cards (NICs).
+%Advanced NICs equipped with special hardware (ASIC) are purpose-built to offload pre-defined packet processing functions (e.g., OVS fastpath, packet and flow steering). Some NICs can be enhanced with FPGAs for custom function development. 
+%Examples include offloading distributed consensus protocols, memcached and key-value stores, rate-limiting packet flows, cryptography, quality of service and storage networking.
+%More advanced NICs, i.e., smart NICs (sNICs), which are equipped with fully programmable, system-on-chip-multi-core processor, can run a full-fledged operating system and run any arbitrary packet processing function.
+As such, these advanced hardware are increasingly being deployed in data centers %to help reduce the host CPU utilization and 
+to enable low latency and high throughput networks~\cite{Guo:2016:ROC, Firestone:2018:AAN, catapult, brainwave}.
+They provide new opportunities not only for optimizing the existing network stacks, or innovating 
+new networking stacks, but also for optimizing the performance of distributed systems by consuming 
+the traffic inside the network.
+%However, it brings new challenges to the data center network if not properly used. For example, RoCE, a NIC offloaded network protocol that allows remote direct memory access (RDMA) over Ethernet network, requires the lossless network. Design choices including which RDMA operations to use and how to use them can significantly affect performance of RDMA applications. 
+%The introduction of smart NICs to virtual networking can impose additional complexity in the existing management/control planes. The inefficiency of a single core of smart NIC compared with x86 CPU core makes us think about what kind of network functions should be offloaded to the smart NICs. 
+My current research focuses on better utilizing the aforementioned programmable hardware to improve the network performance. 
+\section*{Past and Current Projects}
+\textbf{Gazelle: Towards Bounded Low Latency in High-speed Networks}~\cite{Gazelle}\textbf{.}
+Modern applications and cloud services are severely impacted by the high tail
+latency.  However, bounding tail latency at high loads is a
+significant challenge, which needs to be solved across all infrastructure
+components, including datacenter networks.  In this project, we focus on
+providing bounded low network delays for application level
+messages in high-speed networks for rack-scale systems.  Our goal is
+to realize a system similar to Fastpass but with a practical scheduler
+that can support high line rates on existing network hardware.
+We design our network architecture, Gazelle that employs
+global packet scheduling at programmable switches in a lossless manner
+and does not sacrifice network utilization to provide bounded low message
+latency.
+
+\textbf{RoGUE: RDMA over Generic Unconverged Ethernet}~
+\cite{Le:2018:rogue}\textbf{.} Current RDMA over Converged Ethernet (RoCE) require Priority Flow
+Control (PFC) that uses backpressure-based congestion
+control to offer RDMA a lossless abstraction. Unfortunately,
+PFC suffers from a series of problems, e.g., deadlock, head of line blocking, and unfairness. 
+As a result,
+RoCE’s adoption has been slow and requires complex
+network management. Several efforts, such as TIMELY~\cite{Mittal:2015:TRC}
+and DCQCN~\cite{Zhu:2015:CCL}, have addressed some of the issues by reducing
+the generation of PFC frames, but they do not completely
+solve the problem.
+RoGUE, a new congestion control and
+recovery mechanism for RDMA over Ethernet does
+not rely on PFC. RoGUE does judicious labor division 
+between hardware and software for congestion control, flow control and loss recovery.  
+Using congestion windows and RTT-based
+congestion signals inspired by TCP Vegas and
+TIMELY, RoGUE allows use of RDMA for high performance
+without special network configuration. In addition,
+RoGUE supports both the RC and UC RDMA
+transports. Our experiments show that RoGUE achieves
+performance and CPU utilization close to native RDMA
+protocols while gracefully tolerating congested networks.
+
+\textbf{UNO: Unifying Host and Smart NIC Offload for Flexible Packet
+Processing}~\cite{uno:le}\textbf{.} Increasingly, sNICs are being used
+in data centers to offload networking functions (NFs) from host
+processors thereby making these processors available for tenant applications.
+Modern sNICs have fully programmable, energy-efficient
+multi-core processors on which many packet processing functions,
+including a full-blown programmable switch, can run. However,
+having multiple switch instances deployed across the host hypervisor
+and the attached sNICs makes controlling them difficult and
+data plane operations more complex.
+We propose UNO, a generalized SDN-controlled NF offload
+architecture. It can transparently offload dynamically
+selected host processors’ packet processing functions to sNICs by
+using multiple switches in the host while keeping the data centerwide
+network control and management planes unmodified. UNO
+exposes a single virtual control plane to the SDN controller and
+hides dynamic NF offload behind a unified virtual management
+plane. This enables UNO to make optimal use of host’s and sNIC’s
+combined packet processing capabilities with local optimization
+based on locally observed traffic patterns and resource consumption, 
+without any central controller involvement. Experimental results
+based on a real UNO prototype in realistic scenarios show promising
+results.
+%: it can save processing worth up to 8 CPU cores, reduce power usage by up to 2x, and reduce the control plane overhead by more than 50\%.
+
+
+\section*{Future Research}
+I believe there will be further tremendous opportunities to better utilize the new features of the programmable NICs and switches. Beyond that, I am interested in exploring the opportunities and challenges for the applications in the age of fast networks. 
+%%\textbf{Scalable RDMA:}
+%%Due to the limitation of NIC cache, too many outstanding requests and/or queue pairs issued in a RDMA-capable NIC can lead to poor performance of RDMA applications~\cite{farm:aleksandar}. UD transport in RDMA protocol allows one queue at an end host can connect to multiple end hosts, which provides a possibility for RDMA to solve the scalability issues. There are two main challenges here: a) Only one RDMA verb, SEND, provides UD transport and SEND UD is a two-sided RDMA, which requires CPU involvement at local and remote hosts. Making SEND UD achieve a comparable CPU utilization as one-sided RDMA at local and remote hosts could be a big challenge. b) UD does not provide ACK of a packet, i.e., it does not guarantee reliability as the RDMA RC transport does. Reliability is too complex for the current commodity NIC to handle if it is implemented in hardware. Software-based reliability requires high CPU utilization. How to handle the trade-off between the reliability at the software and CPU utilization is still an open question.
+
+%%
+%%\textbf{Rethinking TCP Protocol:} 
+%%Recent works have shown that TCP works worse than RDMA in terms of performance, i.e., TCP has a higher latency, lower throughput, higher CPU utilization than RDMA. Due to the simplicity of the RDMA protocol, it can be fully offloaded to the hardware. It also assumes that the network is lossless, which is achieved by PFC and PFC has well known troubles in network stability. The inefficiency of iWARP~\cite{iWARP:analysis}, the full offloading version of TCP, indicates that we should properly place reliability and congestion control functionality at hardware and software.
+%%I am seeking an approach that can handle congestion control and reliability either in hardware or software but with comparable performance as RDMA, i.e., high throughput (100Gbps or higher), low latency ($\mu$s or $ns$), low CPU utilization.
+%%In this context, congestion control algorithms and packet loss recovery mechanisms should be re-designed to fit into the fast network.
+
+\textbf{Network-Assisted Applications}
+Network-Assisted applications, e.g., SwitchML, NetCache,  
+have emerged due to the recent advances of programmable
+switches. SwitchML utilized the computation capacity of the programmable switch 
+to eliminate the incast pattern, while NetCache takes
+the limited switch memory as cache to reduce the latencies of RPC requests.
+However, these systems assume that the whole network is rack-scale and owned by these applications.
+This results in simple transport protocols. To enable general applications to use switch resources, a generic network transport layer is required. The traditional reliable network stack, i.e., TCP, is not applicable because the concept of end-to-end stateful connection is broken in this scenario as RPC requests can end either at the host or inside the network, i.e., at the switches. The transport layer requires hosts and switches to be co-designed. These are the open questions: {\it How to design congestion control algorithm and ensure reliability between the end hosts and the switches? How to support different switch resource allocation policies among different applications or tenants, on switches with limited programmability?}
+
+\textbf{Network-Assisted Protocols}
+One set of Network-Assisted protocols targets at low latency, high throughput, e.g., Gazelle.
+Another set of the Network-Assisted protocols focuses the reliability.
+In RoCE, PFC is essential to provide reliability. 
+Due to the presence of PFC, RoCE NIC only implements a go-back-n mechanism to handle packet loss.
+Because PFC compromises with network stability, data center providers are reluctant to enable PFC. As a result, RDMA has not seen the uptake it deserves. One way to remove PFC is to implement selective retransmission and selective ACKs, similar as TCP, in NIC~\cite{irn}, which requires us to work with the NIC vendor. The recent advances of programmable switches are able to detect the packet loss due to the buffer overflow. Using programmable switches to send NACK is a promising direction. NACK packets sent from switch can trigger fast 
+retransmission at the sender to mitigate the deficiency of the go-back-n mechanism. Challenges involved are: {\it How to suppress the NACK packets sent by the end-host? How to efficiently use the memory or compress the memory usage in switch to store the missing information for the NACK?}  
+
+\textbf{Impacts of Faster Network:}
+When the network becomes faster, i.e., the bandwidth can reach 100Gbps or higher, and the latency is in the range of 1$\mu$s - 5$\mu$s, there is an open question: \textbf{\it what can we do with the faster network?} One candidate could be intra datacenter shared memory systems. As the bandwidth gap between the network and memory subsystem has shrunk in recent years~\cite{memory:Marcos}, it is feasible to treat remote memory as local memory. Despite the recent efforts of resource disaggregation~\cite{aggregation:gao}, shared memory~\cite{memory:Marcos}, and Infiniswap~\cite{Infiniswap}, many questions remain unanswered: {\it how to make a good choice of a remote host as the remote memory location given the unstable bandwidth of the network? How to recover from a remote host failure? How can we achieve minimum impact on the applications running in the remote host? What kind of applications are suitable to run on these shared memory infrastructures?}
+
+Fast programmable network hardware offers a promising approach for reducing host CPU utilization as well as high performance network. It drew a lot of attention from industry and academia. I am excited to solve practical problems in this area and I believe my research can contribute to improving the performance of data center networks and applications running on these networks. 
+\bibliographystyle{plain}
+%\bibliography{sample-bibliography}
+\bibliography{refer}
+\end{document}
